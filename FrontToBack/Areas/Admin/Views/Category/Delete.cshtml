@@ -1,0 +1,31 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-3 card">
+                <div class="card-header">
+                    <img src="/admin/images/faces/face10.jpg" alt="Alternate Text" />
+                </div>
+                <div class="card-body">
+                    <h1>@Model.Name</h1>
+                    @Html.Raw(Model.Description)
+
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <a asp-area="Admin" asp-controller="Category" asp-action="index" class="btn btn-inverse-secondary">Back List</a>
+                    <form  method="post">
+
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+

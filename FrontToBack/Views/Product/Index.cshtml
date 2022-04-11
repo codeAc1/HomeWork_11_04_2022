@@ -1,0 +1,40 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<main>
+    <div class="container">
+        <div class="row productParent">
+            @await Component.InvokeAsync("Product", 8)
+            @*<partial name="_ProductPartial"/>*@
+            @*@foreach (Product product in Model)
+        {
+            <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
+                <div class="product-item text-center" data-id="@product.Category.Name.ToLower()">
+                    <div class="img">
+                        <a href="">
+                            <img src="~/img/@product.ImageUrl" class="img-fluid" alt="">
+                        </a>
+                    </div>
+                    <div class="title mt-3">
+                        <h6>@product.Id - @product.Title</h6>
+                    </div>
+                    <div class="price">
+                        <span class="text-black-50">Add to cart</span>
+                        <span class="text-black-50">$@product.Price</span>
+                    </div>
+                </div>
+            </div>
+        }*@
+
+        </div>
+        <div class="row my-3">
+            
+            <input type="hidden" id="productCount" value="@ViewBag.ProductCount" />
+            <a asp-controller="product" asp-action="loadmore" class="btn btn-success" id="loadMore">Load More...</a>
+
+        </div>
+    </div>
+</main>

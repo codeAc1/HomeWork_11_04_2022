@@ -7,6 +7,10 @@
   <ItemGroup>
     <Compile Remove="Migrations\20220406080740_Test.cs" />
     <Compile Remove="Migrations\20220406080740_Test.Designer.cs" />
+    <Compile Remove="Migrations\20220412071904_productDelete.cs" />
+    <Compile Remove="Migrations\20220412071904_productDelete.Designer.cs" />
+    <Compile Remove="Migrations\20220412072225_productdelete.cs" />
+    <Compile Remove="Migrations\20220412072225_productdelete.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

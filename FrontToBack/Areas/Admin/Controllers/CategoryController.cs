@@ -76,6 +76,7 @@ namespace FrontToBack.Areas.Admin.Controllers
 
             if (category == null) return NotFound();
             category.IsDeleted = true;
+            
              //_context.Categories.Remove(category);
             await _context.SaveChangesAsync();
 

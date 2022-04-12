@@ -1,5 +1,6 @@
 ﻿using FrontToBack.DAL;
 using FrontToBack.Extensions;
+using FrontToBack.Helpers;
 using FrontToBack.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using FrontToBack.Helpers;
 
 namespace FrontToBack.Areas.Admin.Controllers
 {
@@ -76,6 +78,20 @@ namespace FrontToBack.Areas.Admin.Controllers
             
 
 
+        }
+        [HttpPost]
+        
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeletePost(int? id)
+        {
+            if (id == null) return BadRequest();
+            //Slider slider1 = await _context.Sliders.FirstOrDefaultAsync(s => s.Id == id);
+            Slider slider = await _context.Sliders.FindAsync(id);
+            if (slider == null) return NotFound();
+            Helper.DeleteFile(_env.WebRootPath, "img", slider.ImageUrl);
+            _context.Sliders.Remove(slider);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
     }
 }

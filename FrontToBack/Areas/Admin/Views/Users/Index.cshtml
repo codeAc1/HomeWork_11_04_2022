@@ -1,0 +1,126 @@
+﻿@model List<UserVM>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Users</h4>
+
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Surname
+                                </th>
+                                <th>
+                                    Username
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                                <th>
+                                    Role
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                                <th>
+                                    <span>Settings</span>
+                                    
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (UserVM user in Model)
+                            {
+                             
+                            <tr>
+                                <td>
+                                    @user.Name
+                                </td>
+                                <td>
+                                    @user.SurName
+                                </td>
+                                <td>
+                                    @user.Username
+                                </td>
+                                <td>
+                                    @user.Email
+                                </td>
+
+                                <td>
+                                    @if (user.Role.ToString() == "Admin")
+                                    {
+                                        <span class="text-danger " style="font-weight:700; font-size:20px">@user.Role</span>
+
+                                    }
+                                    else
+                                    {
+                                        @user.Role
+                                    }
+
+                                </td>
+                                @if (user.IsDeleted)
+                                {
+                                    <td class="text-danger">
+                                        Deactive
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td class="text-success">
+                                        Active
+                                    </td>
+                                }
+
+                                @if (user.Username != User.Identity.Name)
+                                {
+
+                                    <td>
+                                        <a class="btn btn-warning"  asp-action="ChangeRole" asp-route-id="@user.Id">
+                                            ChangeRole
+                                        </a>
+
+                                        @if (user.IsDeleted)
+                                        {
+                                            <a class="btn btn-success"  asp-action="Activated" asp-route-id="@user.Id">
+                                                Activated
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a class="btn btn-danger"  asp-action="Activated" asp-route-id="@user.Id">
+                                                Deactivate
+                                            </a>
+                                        }
+
+
+                                    </td>
+
+
+                                }
+
+                                
+
+                            </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

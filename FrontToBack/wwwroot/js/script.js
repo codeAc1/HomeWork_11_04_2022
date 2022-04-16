@@ -22,7 +22,7 @@ $(document).ready(function () {
             }
         })
     })
-
+    
     // HEADER
 
     $(document).on('click', '#search', function () {

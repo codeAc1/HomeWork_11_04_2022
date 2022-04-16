@@ -19,7 +19,7 @@ namespace FrontToBack.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync(int take)
         {
-            List<Product> model = _context.Products.Include(p => p.Category).OrderByDescending(p => p.Id).Take(take).ToList();
+            List<Product> model = _context.Products.OrderByDescending(p => p.Id).Include(p => p.Category).Take(take).ToList();
             return View(await Task.FromResult(model));
         }
     }

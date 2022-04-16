@@ -5,51 +5,75 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <a asp-area="admin" asp-controller="slider" asp-action="create" class="btn btn-success mb-3">Create New Slider</a>
+        @if (ViewBag.SlideCount < 5)
+        {
+            <a asp-area="admin" asp-controller="slider" asp-action="create" class="btn btn-success mb-3  ">Create New Slider</a>
+        }
+        else
+        {
+            <a asp-area="admin" asp-controller="slider" asp-action="create" class="btn btn-success mb-3 disabled"> Create New Slider</a>
+        }
+
     </div>
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Sliders</h4>
-
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                             <tr>
 
                                 <th>
-                                   Image
-                                </th>
-                               
-                                <th>
-                                    <span>Settings</span>
-                                    
+                                    Image
                                 </th>
 
+                                <th>
+                                    <span>Settings</span>
+
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
 
                             @foreach (Slider slide in Model)
                             {
-
                                 <tr>
-
-
-
-                                    <td >
-                                        <img src="~/img/@slide.ImageUrl" alt="Alternate Text"  />
-                                    </td>
                                     <td>
-                                        <a class="btn btn-success" asp-action="Detail" asp-route-id="@slide.Id">
+                                        <img src="~/img/@slide.ImageUrl" alt="Alternate Text" />
+                                    </td>
+                                    <td class="d-flex ">
+                                        <a class="btn btn-info mx-1" asp-action="Detail" asp-route-id="@slide.Id">
                                             <i class="mdi mdi-account-card-details"></i>
                                         </a>
-                                        <a class="btn btn-warning" asp-action="Update" asp-route-id="@slide.Id">
-                                            <i class="mdi mdi-table-edit"></i>
-                                        </a>
-                                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@slide.Id">
-                                            <i class="mdi mdi-delete-forever"></i>
-                                        </a>
+
+                                        @if (@ViewBag.SlideCount == 1)
+                                        {
+                                            <a class="btn btn-dark mx-1 disabled" asp-action="Delete" asp-route-id="@slide.Id">
+                                                <i class="mdi mdi-delete-forever"></i>
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a class="btn btn-dark mx-1 " asp-action="Delete" asp-route-id="@slide.Id">
+                                                <i class="mdi mdi-delete-forever"></i>
+                                            </a>
+                                        }
+
+
+                                       
+                                    <form method="post" asp-action="DeletePost" asp-route-id="@slide.Id">
+                                        @if (@ViewBag.SlideCount == 1)
+                                        {
+                                            <button type="submit" class="btn btn-danger slideDeleteBtn" disabled><i class="mdi mdi-delete-forever"></i></button>
+                                        }
+                                        else
+                                        {
+                                            
+                                            <button type="submit"  class="btn btn-danger slideDeleteBtn2"><i class="mdi mdi-delete-forever"></i></button>
+                                        }
+
+                                    </form>
                                     </td>
 
                                 </tr>
@@ -62,5 +86,21 @@
         </div>
     </div>
 </div>
+@section Script{
+    @*<script>
+        
+
+        let btn = document.querySelectorAll(".slideDeleteBtn")
+        for (var elem of btn) {
+
+            elem.addEventListener("click", function () {
+                this.nextElementSibling.click();
+                this.parentElement.parentElement.parentElement.innerHTML = ""
+                
+            })
+        }
+    </script>*@
+    
+}
 
 

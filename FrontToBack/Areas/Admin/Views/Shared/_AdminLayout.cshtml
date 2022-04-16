@@ -180,11 +180,25 @@
                             <span class="menu-title">Categories</span>
                             <i class="menu-arrow"></i>
                         </a>
-                        
+
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="index">Categories List</a></li>
                                 <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Create">Create Category</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">Flowers</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Flower" asp-action="index">Flower List</a></li>
+                                
                             </ul>
                         </div>
                     </li>
@@ -197,6 +211,19 @@
                         <div class="collapse" id="ui-basic">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Slider" asp-action="index">Slider List</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                            <i class="mdi mdi-circle-outline menu-icon"></i>
+                            <span class="menu-title">User</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-basic">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Users" asp-action="Index">Users List</a></li>
+                                <li class="nav-item"> <a class="nav-link" asp-area="Admin" asp-controller="Users" asp-action="Create">Create User</a></li>
                             </ul>
                         </div>
                     </li>
@@ -240,6 +267,7 @@
                             </ul>
                         </div>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="documentation/documentation.html">
                             <i class="mdi mdi-file-document-box-outline menu-icon"></i>

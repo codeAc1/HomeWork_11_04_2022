@@ -13,8 +13,11 @@ namespace FrontToBack.Models
         public int Id { get; set; }
         [Required, StringLength(255)]
         public string ImageUrl { get; set; }
-        [NotMapped,Required(ErrorMessage ="Şəkil Seçilməyib")]
-        public IFormFile Photo { get; set; }
+        //[NotMapped,Required(ErrorMessage ="Şəkil Seçilməyib")]
+        //public IFormFile Photo { get; set; }
+        [NotMapped, Required(ErrorMessage = "Şəkil Seçilməyib")]
+        public List<IFormFile>  Photos { get; set; }
+
 
     }
 }

@@ -163,3 +163,17 @@ C:\Users\Admin\Desktop\Backend dersler\Serbest\04.04.2022\FrontToBack\FrontToBac
 C:\Users\Admin\Desktop\Backend dersler\Serbest\04.04.2022\FrontToBack\FrontToBack\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Slider\Index.cshtml.g.cs
 C:\Users\Admin\Desktop\Backend dersler\Serbest\04.04.2022\FrontToBack\FrontToBack\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Slider\Create.cshtml.g.cs
 C:\Users\Admin\Desktop\Backend dersler\Serbest\04.04.2022\FrontToBack\FrontToBack\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Slider\Delete.cshtml.g.cs
+C:\Users\Admin\Desktop\Backend dersler\Serbest\04.04.2022\FrontToBack\FrontToBack\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Slider\Detail.cshtml.g.cs
+C:\Users\Admin\Desktop\Backend dersler\Serbest\04.04.2022\FrontToBack\FrontToBack\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Admin\Desktop\Backend dersler\Serbest\04.04.2022\FrontToBack\FrontToBack\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Admin\Desktop\Backend dersler\Serbest\04.04.2022\FrontToBack\FrontToBack\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Admin\Desktop\Backend dersler\Serbest\04.04.2022\FrontToBack\FrontToBack\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Admin\Desktop\Backend dersler\Serbest\04.04.2022\FrontToBack\FrontToBack\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Admin\Desktop\Backend dersler\Serbest\04.04.2022\FrontToBack\FrontToBack\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\Admin\Desktop\Backend dersler\Serbest\04.04.2022\FrontToBack\FrontToBack\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationPartial.cshtml.g.cs
+C:\Users\Admin\Desktop\Backend dersler\Serbest\04.04.2022\FrontToBack\FrontToBack\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Admin\Desktop\Backend dersler\Serbest\04.04.2022\FrontToBack\FrontToBack\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Users\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\Backend dersler\Serbest\04.04.2022\FrontToBack\FrontToBack\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Flower\Index.cshtml.g.cs
+C:\Users\Admin\Desktop\Backend dersler\Serbest\04.04.2022\FrontToBack\FrontToBack\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Flower\Create.cshtml.g.cs
+C:\Users\Admin\Desktop\Backend dersler\Serbest\04.04.2022\FrontToBack\FrontToBack\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Flower\Delete.cshtml.g.cs
+C:\Users\Admin\Desktop\Backend dersler\Serbest\04.04.2022\FrontToBack\FrontToBack\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Flower\Detail.cshtml.g.cs

@@ -1,5 +1,6 @@
 ﻿using FrontToBack.DAL;
 using FrontToBack.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 namespace FrontToBack.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize (Roles ="Admin")]
     public class CategoryController : Controller
     {
         private readonly AppDbContext _context;
@@ -73,6 +75,11 @@ namespace FrontToBack.Areas.Admin.Controllers
         {
             if (id == null) return BadRequest();
             Category category = await _context.Categories.FirstOrDefaultAsync(c => c.Id == id && !c.IsDeleted);
+            List<Product> products = _context.Products.Where(p => p.CategoryId == category.Id).ToList();
+            foreach (Product item in products)
+            {
+                item.IsDeleted = true;
+            }
 
             if (category == null) return NotFound();
             category.IsDeleted = true;

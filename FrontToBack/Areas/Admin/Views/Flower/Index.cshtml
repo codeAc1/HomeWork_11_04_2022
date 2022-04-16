@@ -1,0 +1,116 @@
+﻿@model List<Product>
+
+@{
+    ViewData["Title"] = "Index";
+    
+}
+
+<div class="row">
+    <div class="col-lg-12">    
+            <a asp-area="admin" asp-controller="Flower" asp-action="Create" class="btn btn-success mb-3  ">Create New Product</a>
+    </div>
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Sliders</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr >
+
+                                <th>
+                                    #
+                                </th>
+
+                                <th>
+                                    Image
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Price
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                                <th>
+                                    Settings
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            @foreach (Product product in Model)
+                            {
+                                
+                            <tr>
+                                
+                                <td>
+                                    <p>@product.Id</p>
+                                </td>
+                                <td>
+                                    <img src="~/img/@product.ImageUrl" alt="Alternate Text" style="width:50px;height:50px;object-fit:contain"/>
+                                </td>
+                                <td>
+                                    <p>@product.Title</p>
+                                </td>
+                                <td>
+                                    <p>@product.Price</p>
+                                </td>
+                                <td>
+                                    @if (product.IsDeleted == true)
+                                    {
+                                        <p class="text-danger">Deleted</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="text-success">InStock</p>
+                                    }
+                                </td>
+                                <td class="d-flex ">
+
+                                    @if (product.IsDeleted == true)
+                                    {
+
+                                        <form method="post" asp-action="Restore" asp-route-id="@product.Id">
+                                            
+                                                <button type="submit" class="btn btn-success"><i class="mdi mdi-backup-restore"></i></button>
+                                            
+                                        </form>
+                                        
+                                    }
+                                    else
+                                    {
+                                        <a class="btn btn-info mx-1" asp-action="Detail" asp-route-id="@product.Id">
+                                            <i class="mdi mdi-account-card-details"></i>
+                                        </a>
+                                        <a class="btn btn-warning mx-1" asp-action="Update" asp-route-id="@product.Id">
+                                            <i class="mdi mdi-tooltip-edit"></i>
+                                        </a>
+                                        <a class="btn btn-dark mx-1 " asp-action="Delete" asp-route-id="@product.Id">
+                                            <i class="mdi mdi-delete-forever"></i>
+                                        </a>
+                                    }
+
+                                    <form method="post" asp-action="DeletePost" asp-route-id="@product.Id">
+                                        @if (product.IsDeleted == false)
+                                        {
+                                            <button type="submit" class="btn btn-danger slideDeleteBtn2"><i class="mdi mdi-delete-forever"></i></button>
+                                        }
+
+
+                                    </form>
+                                </td>
+
+                            </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

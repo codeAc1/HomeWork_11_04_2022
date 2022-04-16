@@ -16,10 +16,15 @@
 </head>
 
 <body>
-    <a class="nav-link" asp-area="Admin" asp-controller="Dashboard" asp-action="index">
-        <i class="mdi mdi-home menu-icon"></i>
-        <span class="menu-title">Admin</span>
-    </a>
+    <div class="d-flex justify-content-between ">
+        <div class="col-lg-4 mt-3">
+            <a class="btn btn-outline-success" asp-area="Admin" asp-controller="Dashboard" asp-action="index">
+                Admin
+            </a>
+        </div>
+    </div>
+
+
     @await Component.InvokeAsync("Header")
     @RenderBody()
     @await Component.InvokeAsync("Footer")
@@ -39,6 +44,7 @@
     <script src="owlcarousel/owl.carousel.min.js"></script>
     <script src="~/js/script.js"></script>
     
+
 </body>
 
 </html>

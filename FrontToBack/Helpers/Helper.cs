@@ -17,4 +17,12 @@ namespace FrontToBack.Helpers
             }
         }
     }
+    public enum Roles 
+    {
+        Admin,
+        Maneger,
+        Member
+    
+    }
+
 }
